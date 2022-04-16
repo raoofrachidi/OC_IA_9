@@ -1,0 +1,37 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    },
+    {
+      "name": "clicksBlob",
+      "type": "blob",
+      "dataType": "binary",
+      "path": "data/small_clicks.csv",
+      "connection": "AzureWebJobsStorage",
+      "direction": "in"
+    },
+    {
+      "name": "embeddingsBlob",
+      "type": "blob",
+      "dataType": "binary",
+      "path": "data/small_embeddings.pickle",
+      "connection": "AzureWebJobsStorage",
+      "direction": "in"
+    }
+
+  ]
+}
